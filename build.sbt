@@ -1,9 +1,10 @@
-name := "Simple Project"
+name := "play-with-spark"
 
 version := "1.0"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.11.11"
 
 val sparkVersion = "1.6.1"
 
 libraryDependencies += "org.apache.spark" % "spark-core_2.10" % sparkVersion
+libraryDependencies += "org.apache.spark" % "spark-sql_2.10" % sparkVersion

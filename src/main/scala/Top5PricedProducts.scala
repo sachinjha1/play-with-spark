@@ -5,9 +5,10 @@ import org.apache.spark.SparkConf
 object Top5PricedProducts {
   def main(args: Array[String]) {
 
-    val conf = new SparkConf().setAppName("Simple Application").setMaster("local[2]")
+    val conf = new SparkConf().setAppName("Simple Application")//.setMaster("local[2]") // --master local[2] is set to spark-submit thats why commented here.
     val sc = new SparkContext(conf)
     //create RDD for products part-00000 file
+    //val products_rdd = sc.textFile("/Users/s2jha/Documents/IntegratedPlanning/spark-jobs/play-with-spark/src/main/resources/data/retail_db/products/part-00000")
     val products_rdd = sc.textFile("src/main/resources/data/retail_db/products/part-00000")
     val productNotEmptyPrice_rdd = products_rdd.filter(row => row.split(",")(4) != "")
 
