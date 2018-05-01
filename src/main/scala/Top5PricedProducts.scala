@@ -1,12 +1,16 @@
 import org.apache.spark.SparkContext
 import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
+import org.apache.log4j.{Level, Logger}
 
 object Top5PricedProducts {
   def main(args: Array[String]) {
 
     val conf = new SparkConf().setAppName("Simple Application")//.setMaster("local[2]") // --master local[2] is set to spark-submit thats why commented here.
     val sc = new SparkContext(conf)
+    
+    //set log level
+    //todo
     //create RDD for products part-00000 file
     //val products_rdd = sc.textFile("/Users/s2jha/Documents/IntegratedPlanning/spark-jobs/play-with-spark/src/main/resources/data/retail_db/products/part-00000")
     val products_rdd = sc.textFile("src/main/resources/data/retail_db/products/part-00000")

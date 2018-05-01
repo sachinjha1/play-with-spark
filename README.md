@@ -18,8 +18,10 @@ mkdir lib project target
 
 Create plugin.sbt in project folder (for sbt eclipse and abt assembly)
 
+```
 addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.6")
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.2.4")
+```
 
 ### Step 3:
 Run sbt, sbt eclipse
@@ -35,8 +37,14 @@ spark-submit \
  /Users/s2jha/Documents/IntegratedPlanning/spark-jobs/play-with-spark/target/scala-2.11/play-with-spark_2.11-1.0.jar
   
 
+### Quick commands
+sbt reload - reload build.sbt and plugins.sbt
+sbt package - create jar file without spark 
+sbt assembly - create uber/fat jar
+sbt console - load build.sbt in scala command line mode
 
-
+To run in Hadoop cluster make sure you have "spark-submit" command working. Then run sbt package in local to generate jar. Upload the jar into hadoop cluster.
+Run sbt-submit command as per Step-5 above.
 
 
 
